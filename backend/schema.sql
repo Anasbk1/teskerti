@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema teskerti
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema teskerti
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `teskerti` DEFAULT CHARACTER SET utf8 ;
+USE `teskerti` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `teskerti`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `teskerti`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
@@ -28,21 +28,21 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`ticket`
+-- Table `teskerti`.`ticket`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ticket` (
+CREATE TABLE IF NOT EXISTS `teskerti`.`ticket` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
   `category` VARCHAR(250) NOT NULL,
   `image` VARCHAR(450) NOT NULL,
   `price` VARCHAR(150) NOT NULL,
   `details` VARCHAR(800) NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `user_id`),
+  `user_id` INT NULL,
+  PRIMARY KEY (`id`),
   INDEX `fk_ticket_user_idx` (`user_id` ASC) VISIBLE,
   CONSTRAINT `fk_ticket_user`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `teskerti`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
