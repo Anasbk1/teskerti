@@ -1,0 +1,32 @@
+/* NavBar.css */
+
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #bcbcbc;
+    color: rgb(255, 255, 255);
+  }
+
+  .Navlogo {
+    width: 200px;
+    height: 100px;
+  }
+
+  .navcat {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .navcat h2 {
+    margin: 0;
+    font-size: 40px;
+    padding:0;
+  }
+
+  .navcat h2 a {
+    text-decoration: none;
+    color: #FF0074;
+  }
