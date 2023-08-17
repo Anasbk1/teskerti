@@ -5,7 +5,6 @@ import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
 import Navbar from './Navbar'
 import Add from './components/Add';
-import { useState } from 'react';
 
 function App() {
   return (

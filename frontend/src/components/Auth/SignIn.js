@@ -3,7 +3,6 @@ import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import '../../App.css'
 function SignIn(props) {
-    const[name,setName]=useState("")
     const[password,setPassword]=useState("")
     const[email,setEmail]=useState("")
     const navigate = useNavigate();
@@ -17,7 +16,7 @@ function SignIn(props) {
             setError("Wrong password")
          }
         })
-        .catch((error)=>{console.log(error)});
+        .catch((error)=>{setError("User does not exist please sign up")});
      }
           
           const handleLoginClick = () => {
@@ -26,7 +25,6 @@ function SignIn(props) {
     return (
         <div className='sign'>
         <h3>Sign In</h3>
-        <input type="text" className='inp' placeholder='User Name'onChange={e=>setName(e.target.value)}/><br />
         <input type="email" className='inp' placeholder='User E-mail'onChange={e=>setEmail(e.target.value)}/><br />
           <input type="password" className='inp' placeholder='User Password'onChange={e=>setPassword(e.target.value)}/><br />
           <input type="button" className='btn' value="Submit" onClick={handelSubmit}/>

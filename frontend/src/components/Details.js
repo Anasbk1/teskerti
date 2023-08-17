@@ -24,7 +24,7 @@ function Detail(props) {
         <div className='card-content'>
         <button className="btn1" onClick={handleShow}>°°°</button>
              {show?(
-              <> <p>{props.e.FullName}</p>
+              <>
               <button className="btn2" onClick={() => setShowEdit(!showEdit)}>EDIT </button>
               <button className="btn2" onClick={() => {handleDelete(props.e.id)}}>DELETE</button>
              </>

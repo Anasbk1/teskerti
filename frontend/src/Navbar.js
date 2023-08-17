@@ -12,7 +12,7 @@ function Navbar() {
 <div >
 
         <div className='navcat'>
-         <Search/>
+         {/* <Search/> */}
           <h2>
             <Link to='/add'>Add a ticket</Link>
           </h2>

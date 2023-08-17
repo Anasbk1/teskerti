@@ -7,7 +7,7 @@ function Edit(props) {
     const [category, setCategory] = useState(props.e.category);
     const [price, setPrice] = useState(props.e.price);
     const [details, setDetails] = useState(props.e.details);
-    var shop={
+    var ticket={
         image: image,
         name:name,
         category:category,
@@ -17,7 +17,7 @@ function Edit(props) {
 
     
     const handleUpdate = (id) => {
-   axios.put(`http://localhost:3001/api/ticket/${id}`,shop)
+   axios.put(`http://localhost:3001/api/ticket/${id}`,ticket)
    .then(response => {props.render()})
    .catch(error=>console.log(error))
     };
