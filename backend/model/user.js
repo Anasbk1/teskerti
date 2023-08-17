@@ -21,8 +21,8 @@ module.exports = {
                 callback(err, results)
             })
         },
-        getOne : function(id,callback) {
-            connection.query('SELECT * FROM user WHERE id =?', [id], function(err, results) {
+        getOne : function(email,callback) {
+            connection.query('SELECT * FROM user WHERE email =?', [email], function(err, results) {
                 callback(err, results)
             })},
 };
